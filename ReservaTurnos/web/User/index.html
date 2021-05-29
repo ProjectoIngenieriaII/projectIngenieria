@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Reserva de turnos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../librerias/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+        <link href="../librerias/dataTable/jquery.dataTables.min.css" rel="stylesheet" type="text/css" media="all">
+        <link href="../librerias/css/style.css" rel="stylesheet" type="text/css" media="all">
+    </head>
+    <body>
+        <div class="container">
+            <br />
+            <h3>Reservas</h3>
+            <div class="row">
+                <div class="col-xl-2 col-lg-2 col-xs-2 form-group">
+                    <button type="button" class="btn btn-sm btn-success" onclick="_IndexUser.AddReserva()">Nueva Reserva</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-xs-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <table class="table-responsive display table-sm table table-striped table-hover dataTable table-bordered table-condensed compact" id="tableReservas" width="100%">
+                                <thead>
+                                    <tr>
+                                        <td></td>
+                                        <td>Departamento</td>
+                                        <td>Ciudad</td>
+                                        <td>Sucursal</td>
+                                        <td>Tipo Reserva</td>
+                                        <td>Fecha</td>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal fade " id="modalAddReserva" role="dialog">
+            <div class="modal-dialog modal-md">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 id="modal-title-sm" class="modal-title">Crear Reserva</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <form id="form-Reserva" enctype="multipart/form-data">
+                        <div id="modal-body-sm" class="modal-body">
+                            <div class="row col-md-12">
+                                <div class="form-group col-md-12">
+                                    <label for="slcReserva">Tipo Reserva</label>
+                                    <select class="form-control" id="slcReserva" name="slcReserva" required></select>
+                                </div>
+                                
+                                <div class="form-group col-md-12">
+                                    <label for="slcDepto">Departamento</label>
+                                    <select class="form-control" id="slcDepto" name="slcDepto" required></select>
+                                </div>
+                                
+                                <div class="form-group col-md-12">
+                                    <label for="slcCiudad">Ciudad</label>
+                                    <select class="form-control" id="slcCiudad" name="slcCiudad" required></select>
+                                </div>
+                                
+                                <div class="form-group col-md-12">
+                                    <label for="slcSucursal">Sucursal</label>
+                                    <select class="form-control" id="slcSucursal" name="slcSucursal" required></select>
+                                </div>
+                                
+                                <div class="form-group col-md-12">
+                                    <label for="slcHorario">Horario</label>
+                                    <select class="form-control" id="slcHorario" name="slcHorario" required></select>
+                                </div>
+                            </div>
+                            <input type="hidden" name="metodo" id="metodoReserva" value="addReserva">
+                        </div>
+                        <div id="btn-footer-sm" class="modal-footer boton-footer" align="center">
+                            <button id="btn-add-Reserva" type="submit" class="btn btn-success">Agregar Reserva</button>
+                            <button id="btn-sm" type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <script src="../librerias/script/jquery-3.4.1.slim.min.js"></script>
+        <script src="../librerias/script/popper.min.js"></script>
+        <script src="../librerias/bootstrap/bootstrap.min.js"></script>
+        <script src="../librerias/dataTable/jquery.dataTables.min.js"></script>
+        <script src="../librerias/script/reservaTurnos.js"></script>
+        <script src="../librerias/script/indexUser.js"></script>
+    </body>
+</html>
