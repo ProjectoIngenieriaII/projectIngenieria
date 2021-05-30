@@ -56,10 +56,6 @@ and open the template in the editor.
                     <form id="form-Reserva" enctype="multipart/form-data">
                         <div id="modal-body-sm" class="modal-body">
                             <div class="row col-md-12">
-                                <div class="form-group col-md-12">
-                                    <label for="slcReserva">Tipo Reserva</label>
-                                    <select class="form-control" id="slcReserva" name="slcReserva" required></select>
-                                </div>
                                 
                                 <div class="form-group col-md-12">
                                     <label for="slcDepto">Departamento</label>
@@ -77,11 +73,16 @@ and open the template in the editor.
                                 </div>
                                 
                                 <div class="form-group col-md-12">
+                                    <label for="slcReserva">Tipo Reserva</label>
+                                    <select class="form-control" id="slcReserva" name="slcReserva" required></select>
+                                </div>
+                                
+                                <div class="form-group col-md-12">
                                     <label for="slcHorario">Horario</label>
                                     <select class="form-control" id="slcHorario" name="slcHorario" required></select>
                                 </div>
                             </div>
-                            <input type="hidden" name="metodo" id="metodoReserva" value="addReserva">
+                            <input type="hidden" name="userData" id="userData">
                         </div>
                         <div id="btn-footer-sm" class="modal-footer boton-footer" align="center">
                             <button id="btn-add-Reserva" type="submit" class="btn btn-success">Agregar Reserva</button>
@@ -92,7 +93,8 @@ and open the template in the editor.
             </div>
         </div>
         
-        <script src="../librerias/script/jquery-3.4.1.slim.min.js"></script>
+        <script src="../librerias/script/jquery-3.3.1.slim.min.js"></script>
+        <script src="../librerias/script/jquery.min.js"></script>
         <script src="../librerias/script/popper.min.js"></script>
         <script src="../librerias/bootstrap/bootstrap.min.js"></script>
         <script src="../librerias/dataTable/jquery.dataTables.min.js"></script>
