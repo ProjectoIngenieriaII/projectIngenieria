@@ -23,7 +23,16 @@ var lang_dataTable = {
 	}
 };
 
+function ajaxJson(ruta,data,type = 'post'){
+    return $.ajax({
+        url: ruta,
+        type: type,
+        data: data,
+    });
+}
+
 var _Reserva = (function (){
 })(jQuery);
+
 $(document).ready(function(){
 });
