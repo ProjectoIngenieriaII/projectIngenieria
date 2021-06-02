@@ -63,7 +63,7 @@ var _IndexUser = (function (){
         };
         var type = 'POST';
         $.when(ajaxJson(ruta,data,type)).done((resp)=>{
-            resp = JSON.parse(resp.replace('\r\n',''));
+            resp = JSON.parse(resp.replace('\r\n',''));            
             if(resp.resp){
                 $('#slcDepto').append('<option value="">Seleccionar...</option>');
                 // Listar los departamentos
@@ -83,6 +83,8 @@ var _IndexUser = (function (){
         var ruta = '../Ciudad';
         $.when(ajaxJson(ruta,data,type)).done((resp)=>{
             $('#slcCiudad').html('');
+            $('#slcSucursal').html('');
+            $('#slcReserva').html('');
             resp = JSON.parse(resp.replace('\r\n',''));
             if(resp.resp){
                 $('#slcCiudad').append('<option value="">Seleccionar...</option>');
@@ -94,10 +96,58 @@ var _IndexUser = (function (){
         });
     }
     
+    
+        var listarSucursales = ()=>{
+        data = {
+            'metodo': 'listarSucursal',
+            'idCiudad' : $('#slcCiudad').val()
+        }
+        var type = 'POST';
+        var ruta = '../Sucursal';
+        $.when(ajaxJson(ruta,data,type)).done((resp)=>{
+            $('#slcSucursal').html('');
+            resp = JSON.parse(resp.replace('\r\n',''));
+            if(resp.resp){
+                $('#slcSucursal').append('<option value="">Seleccionar...</option>');
+                // Listar las sucursales
+                $.each(resp.data,(i,e)=>{
+                    $('#slcSucursal').append('<option value="'+e.id_sucursal+'">'+e.nom_sucursal+'</option>');
+                });
+            }
+        });
+        
+        
+    }
+    
+            var listarServicios = ()=>{
+        data = {
+            'metodo': 'listarServicios',
+            'idSucursal' : $('#slcSucursal').val()
+        }
+        var type = 'POST';
+        var ruta = '../TipoServicio';
+        $.when(ajaxJson(ruta,data,type)).done((resp)=>{
+            $('#slcReserva').html('');
+            resp = JSON.parse(resp.replace('\r\n',''));
+            if(resp.resp){
+                $('#slcReserva').append('<option value="">Seleccionar...</option>');
+                // Listar las servicios
+                $.each(resp.data,(i,e)=>{
+                    $('#slcReserva').append('<option value="'+e.id_servicio+'">'+e.nom_servicio+'</option>');
+                });
+            }
+        });
+        
+        
+    }
+    
+    
     return {
         init:init,
         AddReserva:AddReserva,
-        listarCiudades:listarCiudades
+        listarCiudades:listarCiudades,
+        listarSucursales:listarSucursales,
+        listarServicios:listarServicios
     }
 
 })(jQuery);
@@ -105,8 +155,15 @@ $(document).ready(function(){
     _IndexUser.init();
     
     $('#slcDepto').on('change',()=>{
-       _IndexUser.listarCiudades();
+       _IndexUser.listarCiudades();      
+    });
+    $('#slcCiudad').on('change',()=>{       
+       _IndexUser.listarSucursales();
+    });
+    $('#slcSucursal').on('change',()=>{       
+       _IndexUser.listarServicios();
     });
     
     $('#userData').val(window.location.search.replace('?user=',''));
 });
+
