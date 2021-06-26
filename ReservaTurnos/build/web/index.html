@@ -18,9 +18,10 @@ and open the template in the editor.
                 <div class="col-md-3"></div>
                 <div class="col-md-6 login-form-1" align="center">
                     <h3>Ingreso Reserva Turnos</h3>
-                    <form action="User/" id="formLogin" method="POST">
+                    <form id="formLogin" method="POST">
+                        
                         <div class="form-group">
-                            <input type="text" class="form-control" name="txtUsuario" id="txtUsuario" placeholder="Usuario" value="" />
+                            <input type="number" class="form-control" name="txtUsuario" id="txtUsuario" placeholder="Usuario" value="" />
                         </div>
                         <div class="form-group">
                             <input type="password" class="form-control" name="txtPassword" id="txtPassword" placeholder="Contraseña" value="" />
@@ -28,6 +29,7 @@ and open the template in the editor.
                         <div class="form-group">
                             <input type="submit" class="btnSubmit" value="Ingresar" />
                         </div>
+                        
                         
                         <div class="form-group">
                             <input type="button" class="btnSubmit" onclick="_Index.AddUser()" value="Registrarse" />
@@ -84,7 +86,8 @@ and open the template in the editor.
                 </div>
             </div>
         </div>
-        <script src="librerias/script/jquery-3.4.1.slim.min.js"></script>
+        <script src="librerias/script/jquery-3.3.1.slim.min.js"></script>
+        <script src="librerias/script/jquery.min.js"></script>
         <script src="librerias/script/popper.min.js"></script>
         <script src="librerias/bootstrap/bootstrap.min.js"></script>
         <script src="librerias/script/reservaTurnos.js"></script>
