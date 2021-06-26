@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>SCRUM</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>					
+					<h3>SCRUM</h3>					
+				</section>
+
+				<section>
+					<h2>Backlog</h2>
+					<p>
+						Se definen los roles y las actividades de cada miembro del equipo
+					</p>
+				</section>
+				<section>
+					<h2>Historia de usuario</h2>
+					<p>Se define el que, como y para que se van a realizar las actividades</p>
+				</section>
+				<section>
+					<h2>Scrum daily</h2>
+					<p>Son reuniones diarias de 15 minutos como maximo para hablar sobre el avance del proyecto</p>
+				</section>
+				<section>
+					<h2>Roles</h2>
+					<ul>
+						<li>Product Owner</li>
+						<li>Team</li>
+						<li>Product Backlog</li>
+					</ul>
+				</section>
+				
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>Sprints</h2>
+						<p>Los sprints son las actividades y tareas que realizara el equipo (team) en periodos de tiempo 
+							definido para desarrollar el programa
+						</p>
+						
+					</section>
+					<section>
+						<img src="../sprint.PNG" alt="">																
+					</section>
+					<section>
+						
+						<a href="https://github.com/ProjectoIngenieriaII/projectIngenieria/projects/4" target="_blank">Ir a los sprints</a>
+					</section>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>Sprints Reboot</h2>
+						<p>Es la entraga de requerimientos al cliente segun el tiempo especificado, el cliente debe autorizarlo 
+							para continuar con el siguiente
+						</p>						
+					</section>
+					<section>
+						<img src="../mockup.PNG" alt="">	
+						<br>															
+						<a href="https://github.com/ProjectoIngenieriaII/projectIngenieria/blob/master/Mockups/ReservaDeTurnos.html" target="_blank">Ver Mockups</a>
+					</section>
+					<section>					
+						<img src="../normalizacion.PNG" alt="">
+						<br>
+						<a href="https://github.com/ProjectoIngenieriaII/projectIngenieria/tree/master/DB" target="_blank">Ver Base de datos</a>
+					</section>
+					<section>					
+						<img src="../usuario.PNG" alt="">	
+						<br>					
+						<a href="https://github.com/ProjectoIngenieriaII/projectIngenieria/tree/master/ReservaTurnos" target="_blank">Ver Proyecto</a>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+	</body>
+</html>
